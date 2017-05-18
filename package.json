@@ -1,0 +1,14 @@
+{
+  "name": "worldhappinessmeter",
+  "version": "0.0.1",
+  "description": "The coolest use of twitter streams since sliced bread!",
+  "dependencies": {
+    "express": "^4.15.2",
+    "node-emoji": "^1.5.1",
+    "socket.io": "^1.7.3",
+    "twit": "^2.2.5"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
