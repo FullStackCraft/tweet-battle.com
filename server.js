@@ -37,9 +37,7 @@ trackWord1 = ':)';
 trackWord2 = ':(';
 
 var sTrackString = [trackWord1, trackWord2].join(', '); // join two strings with a comma, required by track param in stream function
-console.log(sTrackString);
 var stream = bot.stream('statuses/filter', {track:  sTrackString});
-console.log('streaming...');
 stream.on('tweet', function(tweet) {
   if (tweet.text.includes('RT @')) {
     return; // we don't want retweets, just originals
