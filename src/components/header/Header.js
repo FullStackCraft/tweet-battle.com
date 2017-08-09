@@ -5,7 +5,6 @@ class MainContent extends React.Component {
     return (
       <div>
         <h1>World Happiness Meter</h1>
-        <h2>Tweets Worldwide: ''<code>:)</code>'' vs. '<code>:(</code>'</h2>
       </div>
     );
   }

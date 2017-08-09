@@ -13,7 +13,7 @@ const initialChartState = {
   labels: ['Scatter'],
   datasets: [
     {
-      label: 'My First dataset',
+      label: 'Percent word1 vs word2',
       fill: false,
       backgroundColor: 'rgba(75,192,192,0.4)',
       pointBorderColor: 'rgba(75,192,192,1)',
@@ -25,9 +25,7 @@ const initialChartState = {
       pointHoverBorderWidth: 2,
       pointRadius: 1,
       pointHitRadius: 10,
-      data: [
-        { x: 0, y: 0 },
-      ]
+      data: []
     }
   ],
     animation: false
@@ -46,11 +44,13 @@ class AppComponent extends React.Component {
     var oValues = Object.values(chartData);
     var oValuesValues = Object.values(oValues);
     var aData = oValuesValues[1][0].data; // my god...
-    console.log(aData);
-    var iNextX = aData[aData.length - 1].x; // last x value in array, plus 1
-    iNextX = iNextX + 1;
-    console.log(iNextX);
-    console.log(iPercent);
+    var iNextX;
+    if (aData.length !== 0) {
+      iNextX = aData[aData.length - 1].x; // last x value in array, plus 1
+      iNextX = iNextX + 1;
+    } else {
+      iNextX = 1;
+    }
     aData.push({x: iNextX, y: iPercent}); // add the percentage data point
 		var oldDataSet = oValues[1];
 		var newDataSet = {
